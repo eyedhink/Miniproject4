@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Http\Resources;
+
+use Illuminate\Http\Request;
+
+class UserResource extends BaseResource
+{
+    /**
+     * Transform the resource into an array.
+     *
+     * @return array<string, mixed>
+     */
+    public function toArray(Request $request): array
+    {
+        $attributes = parent::toArray($request);
+        $customFields = [
+            'memberships' => MembershipResource::collection($this->whenLoaded('memberships')),
+            'messages' => MessageResource::collection($this->whenLoaded('messages')),
+        ];
+        return array_merge($attributes, $customFields);
+    }
+}
