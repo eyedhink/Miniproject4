@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\MessageSent;
 use App\Http\Resources\MessageResource;
 use App\Models\Chat;
 use App\Models\Message;
@@ -33,8 +32,6 @@ class MessageController extends Controller
 
         $message = Message::query()->create($validated);
 
-        broadcast(new MessageSent($message));
-
         return response()->json(["message" => "Message stored", "data" => MessageResource::make($message)]);
     }
 
@@ -61,8 +58,6 @@ class MessageController extends Controller
         ]);
 
         $message->update($validated);
-
-        broadcast(new MessageSent($message));
 
         return response()->json(["message" => "Message updated"]);
     }

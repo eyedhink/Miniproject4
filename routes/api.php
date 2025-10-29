@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\BroadcastAuthController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\MembershipController;
 use App\Http\Controllers\MessageController;
@@ -35,5 +34,3 @@ Route::middleware(['auth:user'])->group(function () {
     Route::get("/user-info", [UserController::class, "userInfo"]);
 });
 
-Route::post('/broadcasting/auth', [BroadcastAuthController::class, 'authenticate'])
-    ->middleware(['auth:user']);
