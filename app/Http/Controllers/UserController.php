@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\UserResource;
 use App\Models\Membership;
 use App\Models\User;
+use http\Env\Response;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -67,5 +68,10 @@ class UserController extends Controller
             }
         }
         return response()->json(false);
+    }
+
+    public function show(Request $request, $id): JsonResponse
+    {
+        return response()->json(UserResource::make(User::query()->findOrFail($id)));
     }
 }

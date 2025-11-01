@@ -37,7 +37,7 @@ class ChatController extends Controller
 
     public function show($id): JsonResponse
     {
-        return response()->json(Chat::query()->findOrFail($id));
+        return response()->json(ChatResource::make(Chat::with('memberships', 'messages', 'admin')->findOrFail($id)));
     }
 
     public function edit(Request $request, $id): JsonResponse
