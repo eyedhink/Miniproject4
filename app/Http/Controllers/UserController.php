@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\UserResource;
+use App\Models\Membership;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -55,5 +56,16 @@ class UserController extends Controller
             'id' => $request->user()->id,
             'username' => $request->user()->username,
         ]);
+    }
+
+    public function isInChat(Request $request, $id): JsonResponse
+    {
+        $memberships = Membership::query()->where("user_id", $request->user()->id)->get();
+        foreach ($memberships as $membership) {
+            if ($membership->chat_id == $id) {
+                return response()->json(true);
+            }
+        }
+        return response()->json(false);
     }
 }

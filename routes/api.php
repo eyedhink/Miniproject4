@@ -32,5 +32,5 @@ Route::middleware(['auth:user'])->group(function () {
     Route::get("/chat-messages/{chatId}", [MessageController::class, "getChatMessages"]);
 
     Route::get("/user-info", [UserController::class, "userInfo"]);
+    Route::get("/is-in-chat/{id}", [UserController::class, "isInChat"]);
 });
-
