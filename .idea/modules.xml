@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/../../../apps/xampp/htdocs/Chat-Back-Node/.idea/Chat-Back-Node.iml" filepath="$PROJECT_DIR$/../../../apps/xampp/htdocs/Chat-Back-Node/.idea/Chat-Back-Node.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../apps/xampp/htdocs/Chat-Front-Node/.idea/Chat-Front-Node.iml" filepath="$PROJECT_DIR$/../../../apps/xampp/htdocs/Chat-Front-Node/.idea/Chat-Front-Node.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Miniproject4.iml" filepath="$PROJECT_DIR$/.idea/Miniproject4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../backend-but-its-node/.idea/backend-but-its-node.iml" filepath="$PROJECT_DIR$/../../backend-but-its-node/.idea/backend-but-its-node.iml" />
     </modules>
   </component>
 </project>
